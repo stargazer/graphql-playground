@@ -1,16 +1,17 @@
-# Experimenting with Node.js and GraphQL
+# Experimenting with FastAPI and GraphQL
 
 ## How to run
 
 ```shell
-cd nodejs
+cd fastapi
 docker-compose up backend
 ```
 
 ```shell
 docker-compose exec backend bash
-npm install
-node src/index.js
+pip install -r requirements.txt
+cd src
+uvicorn main:app --host 0.0.0.0 --port 3000
 ```
 
 
@@ -22,6 +23,6 @@ node src/index.js
   ```
   POST http://localhost:8080/graphql
   {
-    "query": "{ rollThreeDice  }"
+    "query": "{ goodbye(name: \"dude!\") }"
   }
   ```

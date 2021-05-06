@@ -1,0 +1,11 @@
+version: '3'
+services:
+  backend:
+    image: python
+    stdin_open: true
+    tty: true
+    ports:
+     - "8080:3000"
+    volumes:
+     - .:/backend
+    working_dir: /backend
